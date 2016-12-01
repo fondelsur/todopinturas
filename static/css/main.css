@@ -1,0 +1,42 @@
+.presentation h1{
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    background: blue;
+    border-radius: 3px;
+}
+
+.presentation img{
+    display: block;
+    margin: 0 auto;
+}
+
+ h4{
+    color: white;
+    background-color: blue;
+    border-radius: 3px;
+    font-family: sans-serif;
+}
+
+.form-separator{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.results{
+    border-radius: 4px;
+    margin: 0 auto;
+    width: 80%;
+    border: 1;
+    border-collapse: collapse;
+}
+
+.results, th, td{
+    border: 1px solid #eeeeee
+}
+
+.results tr:hover{
+    background-color: #eeeeee;
+}

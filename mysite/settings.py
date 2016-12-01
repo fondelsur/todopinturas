@@ -21,11 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '&kzg)(b_xt1*nyp-s97ibt01b7p+67#&-brmb_nqj&dn_%q6tc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fondelsur.pythonanywhere.com']
 
 TEMPLATE_DIRS = [(
     BASE_DIR + '/templates/'
@@ -106,6 +106,6 @@ USE_TZ = True
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATIC_URL = '/static/'
-
+STATIC_ROOT = 'static/'
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'

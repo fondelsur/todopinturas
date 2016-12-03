@@ -22,13 +22,19 @@ class Choice(models.Model):
 
 
 class Item(models.Model):
-    article_id = models.CharField(max_length=200, verbose_name="Articulo")
-    article_description = models.CharField(max_length=200, verbose_name="Descripcion del Articulo")
-    article_PVP = models.DecimalField(max_digits=10, default=0,  decimal_places=2, verbose_name="Precio Minimo")
-    article_line1 = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Precio Minimo")
-    article_line2 = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="28+5")
-    article_line3 = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="30+3")
-    article_line4 = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Linea 4")
+    article_id = models.CharField(max_length=200, verbose_name="Código")
+    article_description = models.CharField(max_length=200, verbose_name="Articulo")
+    article_PVP = models.DecimalField(max_digits=10, default=0,  decimal_places=3, verbose_name="PVP")
+    discount_l2 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Descuento L2", blank=True, null=True)
+    net_l2 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto L2", blank=True, null=True)
+    discount_l4 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Descuento L4", blank=True, null=True)
+    net_l4 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto L4", blank=True, null=True)
+    offer_1 = models.CharField(max_length=50, verbose_name="Oferta A", blank=True, null=True)
+    net_1 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto A", blank=True, null=True)
+    offer_2 = models.CharField(max_length=50, verbose_name="Oferta B", blank=True, null=True)
+    net_2 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto B", blank=True, null=True)
+    offer_3 = models.CharField(max_length=50, verbose_name="Oferta C", blank=True, null=True)
+    net_3 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto C", blank=True, null=True)
 
     def __str__(self):
         return self.article_description

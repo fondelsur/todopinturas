@@ -17,25 +17,43 @@
         <table class="results">
             <tr>
                 <th>
-                    ID del Artículo
+                    Código
                 </th>
                 <th>
-                    Descripción
+                    Artículo
                 </th>
                 <th>
                     PVP
                 </th>
                 <th>
-                    Línea 1
+                    Dto. L2
                 </th>
                 <th>
-                    Línea 2
+                    Neto
                 </th>
                 <th>
-                    Línea 3
+                    Dto. L4
                 </th>
                 <th>
-                    Línea 4
+                    Neto
+                </th>
+                <th>
+                    Oferta
+                </th>
+                <th>
+                    Neto
+                </th>
+                <th>
+                    Oferta
+                </th>
+                <th>
+                    Neto
+                </th>
+                <th>
+                    Oferta
+                </th>
+                <th>
+                    Neto
                 </th>
             </tr>
             {% for resultado in consulta %}
@@ -50,16 +68,34 @@
                     {{ resultado.article_PVP }}
                 </td>
                 <td>
-                    {{ resultado.article_line1 }}
+                    {{ resultado.discount_l2 }}
                 </td>
                 <td>
-                    {{ resultado.article_line2 }}
+                    {{ resultado.net_l2 }}
                 </td>
                 <td>
-                    {{ resultado.article_line3 }}
+                    {{ resultado.discount_l4 }}
                 </td>
                 <td>
-                    {{ resultado.article_line4 }}
+                    {{ resultado.net_l4 }}
+                </td>
+                <td>
+                    {{ resultado.offer_1 }}
+                </td>
+                <td>
+                    {{ resultado.net_1 }}
+                </td>
+                <td>
+                    {{ resultado.offer_2 }}
+                </td>
+                <td>
+                    {{ resultado.net_2 }}
+                </td>
+                <td>
+                    {{ resultado.offer_3 }}
+                </td>
+                <td>
+                    {{ resultado.net_3 }}
                 </td>
             </tr>
             {% endfor %}

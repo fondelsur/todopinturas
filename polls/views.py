@@ -138,8 +138,8 @@ def import_sheet(request):
             request.FILES['file'].save_to_database(
                 # name_columns_by_row=2,
                 model=Item,
-                mapdict=(['article_id', 'article_description', 'article_PVP', 'article_line1', 'article_line2', 'article_line3', 'article_line4']))
-            return HttpResponse("OK")
+                mapdict=(['article_id', 'article_description', 'article_PVP', 'discount_l2', 'net_l2', 'discount_l4', 'net_l4', 'offer_1', 'net_1', 'offer_2', 'net_2', 'offer_3', 'net_3']))
+            return HttpResponse("Se ha subido correctamente el archivo")
         else:
             return HttpResponseBadRequest()
     else:

@@ -33,8 +33,8 @@ class Item(models.Model):
     net_1 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto A", blank=True, null=True)
     offer_2 = models.CharField(max_length=50, verbose_name="Oferta B", blank=True, null=True)
     net_2 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto B", blank=True, null=True)
-    offer_3 = models.CharField(max_length=50, verbose_name="Oferta C", blank=True, null=True)
-    net_3 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto C", blank=True, null=True)
+    offer_3 = models.CharField(max_length=50, verbose_name="Oferta C")
+    net_3 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto C")
 
     def __str__(self):
         return self.article_description

@@ -8,12 +8,13 @@
     </head>
     <body>
         <div class="presentation">
-            <h1>Todo Pintura</h1>
+            <h1>Buscador de Referencias</h1>
             <img src="{% static 'images/todopintura.jpg' %}" alt="Todo Pintura S.L." />
 
         </div>
         {% if consulta %}
         <h4>Resultados: </h4>
+        <div class="table-wrapper">
         <table class="results">
             <tr>
                 <th>
@@ -132,17 +133,19 @@
             </tr>
             {% endfor %}
         </table>
+    </div>
+
         {% endif %}
         <h4>Buscador de artículos</h4>
         <div class="form-separator">
-            <form class="form-id" action="{% url 'index' %}" method="get">
+            <form class="form" action="{% url 'index' %}" method="get">
                 <div class="idsearch">
                     <label for="id">Buscar por ID:</label><input type="text" name="id" value=""/>
                 </div>
                 <input class="send" type="submit" name="submit" value="Consultar">
             </form>
-            <form class="form-description" action="{% url 'index' %}" method="get">
-                <div class="descriptionsearch">
+            <form class="form" action="{% url 'index' %}" method="get">
+                <div class="idsearch">
                     <label for="description">Buscar por descripción:</label><input type="text" name="description" value=""/>
                 </div>
                 <input class="send" type="submit" name="submit" value="Consultar">

@@ -21,11 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '&kzg)(b_xt1*nyp-s97ibt01b7p+67#&-brmb_nqj&dn_%q6tc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['fondelsur.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', 'fondelsur.pythonanywhere.com']
 
 TEMPLATE_DIRS = [(
     BASE_DIR + '/templates/'
@@ -104,8 +104,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static/'
+# STATIC_ROOT = 'static/'
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'

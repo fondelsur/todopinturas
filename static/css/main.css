@@ -9,6 +9,8 @@
 .presentation img{
     display: block;
     margin: 0 auto;
+    width: 100%;
+    max-width: 700px;
 }
 
  h4{
@@ -18,9 +20,24 @@
     font-family: sans-serif;
 }
 
+.form{
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(101,134,185);
+    border-radius: 3px;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.idsearch label{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.idsearch input{
+    width: 90%;
+}
 .form-separator{
-    display: flex;
-    justify-content: space-between;
     width: 80%;
     margin: 0 auto;
 }
@@ -31,6 +48,10 @@
     width: 80%;
     border: 1;
     border-collapse: collapse;
+}
+
+.table-wrapper{
+    overflow: auto;
 }
 
 .results, th, td{

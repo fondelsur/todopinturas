@@ -1,12 +1,17 @@
+# -*- coding: utf-8 -*-
+
 from django.shortcuts import render
 from django.http import HttpResponseBadRequest, HttpResponse
 
 from _compact import JsonResponse
 
+from decimal import Decimal
+
 from django.contrib.auth.decorators import login_required
 from django import forms
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
+from django.db import models
 
 import django_excel as excel
 
@@ -112,7 +117,7 @@ def import_data(request):
                 models=[Item],
                 initializers=[None, choice_func],
                 mapdicts=[
-                    ['article_id', 'article_description','article_PVP', 'article_line1', 'article_line2', 'article_line3', 'article_line4']]
+                    ['article_id', 'article_description', 'article_PVP', 'article_line1', 'article_line2', 'article_line3', 'article_line4']]
             )
             return HttpResponse("OK", status=200)
         else:
@@ -135,10 +140,72 @@ def import_sheet(request):
         form = UploadFileForm(request.POST,
                               request.FILES)
         if form.is_valid():
-            request.FILES['file'].save_to_database(
-                # name_columns_by_row=2,
-                model=Item,
-                mapdict=(['article_id', 'article_description', 'article_PVP', 'discount_l2', 'net_l2', 'discount_l4', 'net_l4', 'offer_1', 'net_1', 'offer_2', 'net_2', 'offer_3', 'net_3']))
+            excel = request.FILES['file']
+            dict_values = excel.get_records()
+            for value in dict_values:
+                code = str(value['codigo'])
+                description = value.get('articulo', None)
+                pvp = value.get('PVP', None)
+                dtol2 = value.get('Dto. L2', 0.0)
+                if dtol2 == "":
+                    dtol2 = 0.0
+                netl2 = value.get('Neto', 0.0)
+                if netl2 == "":
+                    netl2 = 0.0
+                dtol4 = value.get('Dto. L4', 0.0)
+                if dtol4 == '':
+                    dtol4 = 0.0
+                netl4 = value.get('Neto-1', 0.0)
+                if netl4 == '':
+                    netl4 = 0.0
+                offer1 = str(value.get('Oferta', 0))
+                if offer1 == '':
+                    offer1 = '0'
+                net1 = value.get('Neto-2', 0.0)
+                if net1 == '':
+                    net1 = 0.0
+                offer2 = str(value.get('Oferta-1', 0))
+                if offer2 == '':
+                    offer2 = '0'
+                net2 = value.get('Neto-3', 0.0)
+                if net2 == '':
+                    net2 = 0.0
+                offer3 = str(value.get('Oferta-2', 0))
+                if offer3 == '':
+                    offer3 = '0'
+                net3 = value.get('Neto-4', 0.0)
+                if net3 == '':
+                    net3 = 0.0
+                try:
+                    item = Item.objects.get(article_id=code)
+                    item.article_description = description
+                    item.article_PVP = pvp
+                    item.discount_l2 = dtol2
+                    item.net_l2 = netl2
+                    item.discount_l4 = dtol4
+                    item.net_l4 = netl4
+                    item.offer_1 = offer1
+                    item.net_1 = net1
+                    item.offer_2 = offer2
+                    item.net_2 = net2
+                    item.offer_3 = offer3
+                    item.net_3 = net3
+                    item.save()
+                except Item.DoesNotExist:
+                    item = Item.objects.create(article_id=code,
+                                               article_description=description,
+                                               article_PVP=pvp,
+                                               discount_l2=dtol2,
+                                               net_l2=netl2,
+                                               discount_l4=dtol4,
+                                               net_l4=netl4,
+                                               offer_1=offer1,
+                                               net_1=net1,
+                                               offer_2=offer2,
+                                               net_2=net2,
+                                               offer_3=offer3,
+                                               net_3=net3
+                                               )
             return HttpResponse("Se ha subido correctamente el archivo")
         else:
             return HttpResponseBadRequest()

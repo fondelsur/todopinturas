@@ -6,6 +6,42 @@
     border-radius: 3px;
 }
 
+body{
+    font-size: 20px;
+}
+@media (min-width:320px) and (max-width:760px){
+  body{
+      font-size: 72px;
+  }
+}
+
+@media (min-device-width:320px) and (max-device-width:760px){
+    body{
+        font-size: 4em;
+    }
+
+    h4{
+        text-align: center;
+    }
+
+    input{
+        height: 50px;
+        font-size: 0.8em;
+    }
+    .results, th, td{
+        font-size: 0.8em !important;
+    }
+    input[type="submit"]{
+        width: 100%;
+        font-size: 0.5em;
+    }
+
+    .form-separator{
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+}
 .presentation img{
     display: block;
     margin: 0 auto;
@@ -23,6 +59,12 @@
     border-radius: 3px;
     font-family: sans-serif;
     color: white;
+    width: 80% !important;
+}
+
+.ui-dialog .confirm{
+    width: 100% !important;
+    font-size: 1em !important;
 }
 
  h4{

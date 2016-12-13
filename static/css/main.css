@@ -13,6 +13,18 @@
     max-width: 700px;
 }
 
+.ui-dialog .ui-dialog-titlebar{
+    display: none !important;
+}
+
+.ui-dialog{
+    background-color: rgb(101,134,185);
+    border: 2px solid black;
+    border-radius: 3px;
+    font-family: sans-serif;
+    color: white;
+}
+
  h4{
     color: white;
     background-color: rgb(101,134,185);
@@ -55,7 +67,14 @@
 }
 
 .results, th, td{
-    border: 1px solid #eeeeee
+    font-family: sans-serif;
+    border: 1px solid white;
+    background-color: rgb(101,134,185);
+    font-size: 1.2em;
+}
+.results td a{
+    padding: 1em;
+    display: block;
 }
 
 .results tr:hover{

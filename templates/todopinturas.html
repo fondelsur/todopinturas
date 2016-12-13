@@ -5,6 +5,12 @@
         <meta charset="utf-8">
         <title> Todo Pintura SL</title>
         <link rel="stylesheet" href="{% static 'css/main.css' %}" media="screen" title="no title">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" media="screen" title="no title">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.structure.min.css' %}" media="screen" title="no title">
+
+        <script src="{% static 'js/jquery.min.js' %}" charset="utf-8"></script>
+        <script src="{% static 'js/jquery-ui.min.js' %}" charset="utf-8"></script>
+        <script src="{% static 'js/more_info.js' %}" charset="utf-8"></script>
     </head>
     <body>
         <div class="presentation">
@@ -26,109 +32,17 @@
                 <th>
                     PVP
                 </th>
-                <th>
-                    Dto. L2
-                </th>
-                <th>
-                    Neto
-                </th>
-                <th>
-                    Dto. L4
-                </th>
-                <th>
-                    Neto
-                </th>
-                <th>
-                    Oferta
-                </th>
-                <th>
-                    Neto
-                </th>
-                <th>
-                    Oferta
-                </th>
-                <th>
-                    Neto
-                </th>
-                <th>
-                    Oferta
-                </th>
-                <th>
-                    Neto
-                </th>
             </tr>
             {% for resultado in consulta %}
-            <tr>
+            <tr data-code="{{ resultado.article_id }}" data-description="{{ resultado.article_description }}" data-pvp="{{ resultado.article_PVP }}€" data-discount-l2="{{ resultado.discount_l2 }}€" data-net-l2="{{ resultado.net_l2 }}€" data-discount-l4="{{ resultado.discount_l4 }}€" data-net-l4="{{ resultado.net_l4 }}€" data-offer1="{{ resultado.offer_1 }}€" data-net1="{{ resultado.net_1 }}€" data-offer2="{{ resultado.offer_2 }}€" data-net2="{{ resultado.net_2 }}€" data-offer3="{{ resultado.offer_3 }}€" data-net3="{{ resultado.net_3 }}€">
                 <td>
-                    {{ resultado.article_id }}
+                    <a class="clickable">{{ resultado.article_id }}</a>
                 </td>
                 <td>
-                    {{ resultado.article_description }}
+                    <a class="clickable">{{ resultado.article_description }}</a>
                 </td>
                 <td>
-                    {{ resultado.article_PVP }}
-                </td>
-                <td>
-                    {% if resultado.discount_l2 %}
-                    {{ resultado.discount_l2 }}
-                    {% else %}
-
-                    {% endif %}
-                </td>
-                <td>
-                    {% if resultado.net_l2 %}
-                    {{ resultado.net_l2 }}
-                    {% else %}
-
-                    {% endif %}
-                </td>
-                <td>
-                    {% if resultado.discount_l4%}
-                    {{ resultado.discount_l4 }}
-                    {% else %}
-                    {% endif %}
-                </td>
-                <td>
-                    {% if resultado.net_l4 %}
-                    {{ resultado.net_l4 }}
-                    {% else %}
-                    {% endif %}
-                </td>
-                <td>
-                    {% if resultado.offer_1%}
-                    {{ resultado.offer_1 }}
-                    {% else %}
-                    {% endif %}
-                </td>
-                <td>
-                    {% if resultado.net_1%}
-                    {{ resultado.net_1 }}
-                    {% else %}
-                    {% endif %}
-                </td>
-                <td>
-                    {% if resultado.offer_2 %}
-                    {{ resultado.offer_2 }}
-                    {% else %}
-                    {% endif %}
-                </td>
-                <td>
-                    {% if resultado.net_2 %}
-                    {{ resultado.net_2 }}
-                    {% else %}
-                    {% endif %}
-                </td>
-                <td>
-                    {% if resultado.offer_3 %}
-                    {{ resultado.offer_3 }}
-                    {% else %}
-                    {% endif %}
-                </td>
-                <td>
-                    {% if resultado.net_3 %}
-                    {{ resultado.net_3 }}
-                    {% else %}
-                    {% endif %}
+                    <a class="clickable">{{ resultado.article_PVP }}</a>
                 </td>
             </tr>
             {% endfor %}
@@ -152,5 +66,30 @@
 
             </form>
         </div>
+
+        <div id="dialog">
+            <p>
+                Tabla de precios para <span><u class="code"></u></span>
+            </p>
+            <p>
+                <span><b class="description"></b></span>
+            </p>
+
+                <ul>
+                    <li><b> PVP:</b> <span><u class="pvp"></u></span></li>
+                    <li><b> Descuento L2:</b> <span><u class="dc2"></u></span></li>
+                    <li><b> Neto L2:</b> <span><u class="net2"></u></span></li>
+                    <li><b> Descuento L4:</b> <span><u class="dc4"></u></span></li>
+                    <li><b> Neto L4: </b><span><u class="net4"></u></span></li>
+                    <li><b> Oferta: </b> <span><u class="of1"></u></span></li>
+                    <li><b> Neto: </b> <span><u class="net1"></u></span></li>
+                    <li><b> Oferta: </b> <span><u class="of2"></u></span></li>
+                    <li><b> Neto: </b>  <span><u class="net2"></u></span></li>
+                    <li><b> Oferta: </b> <span><u class="of3"></u></span></li>
+                    <li><b> Neto: </b>  <span><u class="net3"></u></span></li>
+                </ul>
+
+        </div>
+
     </body>
 </html>

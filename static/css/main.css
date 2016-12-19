@@ -14,7 +14,9 @@ body{
     body{
         font-size: 4em;
     }
-
+    .row{
+        font-size: 1em;
+    }
     h4{
         text-align: center;
     }
@@ -30,7 +32,15 @@ body{
         width: 100%;
         font-size: 0.5em;
     }
-
+    .square h5{
+        font-size: 0.75em !important;
+    }
+    .square b{
+        font-size: 0.75em !important;
+    }
+    .square u{
+        font-size: 0.75em !important;
+    }
     .form-separator{
         width: 100% !important;
         margin: 0 !important;
@@ -57,6 +67,13 @@ body{
     color: white;
     width: 80% !important;
 }
+.upper-row{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(81, 100, 185);
+    margin-bottom: 1em;
+    border-radius: 4px;
+}
 
 .row{
     display: flex;
@@ -69,6 +86,17 @@ body{
 .square{
     display: inline-block;
     border-radius: 3px;
+}
+
+.square h5{
+    font-size: 1.5em;
+}
+.square b{
+    font-size: 1.5em;
+    margin-right: 1em;
+}
+.square u{
+    font-size: 1.5em;
 }
 
 .ui-dialog .confirm{

@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Todo Pintura SL</title>
+        <title>Buscador de artículos</title>
         <link rel="stylesheet" href="{% static 'css/main.css' %}" media="screen" title="no title">
         <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" media="screen" title="no title">
         <link rel="stylesheet" href="{% static 'css/jquery-ui.structure.min.css' %}" media="screen" title="no title">
@@ -14,7 +14,7 @@
     </head>
     <body>
         <div class="presentation">
-            <h1>Buscador de Referencias</h1>
+            <h1>Buscador de artículos</h1>
             <img src="{% static 'images/todopintura.jpg' %}" alt="Todo Pintura S.L." />
 
         </div>
@@ -54,7 +54,7 @@
         <div class="form-separator">
             <form class="form" action="{% url 'index' %}" method="get">
                 <div class="idsearch">
-                    <label for="id">Buscar por ID:</label><input type="text" name="id" value=""/>
+                    <label for="id">Buscar por código:</label><input type="text" name="id" value=""/>
                 </div>
                 <input class="send" type="submit" name="submit" value="Consultar">
             </form>
@@ -69,42 +69,59 @@
 
         <div id="dialog">
             <p>
-                Tabla de precios para <span><u class="code"></u></span>
+                Código: <span><u class="code"></u></span>
             </p>
             <p>
-                <span><b class="description"></b></span>
+                <span>Artículo: <b class="description"></b></span>
             </p>
-            <div class="row">
+            <div>
                 <b> PVP:</b> <span><u class="pvp"></u></span>
 
             </div>
-            <div class="row">
+            <div class="upper-row">
                 <div class="square">
                     <h5>Línea 2</h5>
-                    <b> Descuento :</b> <span><u class="dc2"></u></span>
-                    <b> Neto L2:</b> <span><u class="net2"></u></span>
+                    <p>
+                        <b> Descuento :</b> <span><u class="dc2"></u></span>
+                    </p>
+                    <p>
+                        <b> Neto:</b> <span><u class="net2"></u></span>
+                    </p>
                 </div>
                 <div class="square">
                     <h5>Línea 4</h5>
-                    <b> Descuento: </b> <span><u class="dc4"></u></span>
-                    <b> Neto: </b><span><u class="net4"></u></span>
+                    <p>
+                        <b> Descuento: </b> <span><u class="dc4"></u></span>
+                    </p>
+                    <p>
+                        <b> Neto: </b><span><u class="net4"></u></span>
+                    </p>
                 </div>
             </div>
             <div class="row">
                 <div class="square">
-                    <h5>Oferta 1</h5>
-                    <b> Oferta: </b> <span><u class="of1"></u></span>
-                    <b> Neto: </b> <span><u class="net1"></u></span>
+                    <p>
+                        <b> Oferta: </b> <span><u class="of1"></u></span>
+                    </p>
+                    <p>
+                        <b> Neto: </b> <span><u class="net1"></u></span>
+                    </p>
                 </div>
                 <div class="square">
-                    <h5>Oferta 2</h5>
-                    <b> Oferta: </b> <span><u class="of2"></u></span>
-                    <b> Neto: </b> <span><u class="net2"></u></span>
+                    <p>
+                        <b> Oferta: </b> <span><u class="of2"></u></span>
+                    </p>
+                    <p>
+                        <b> Neto: </b> <span><u class="net2"></u></span>
+                    </p>
                 </div>
                 <div class="square">
-                    <h5>Oferta 3</h5>
-                    <b> Oferta: </b> <span><u class="of3"></u></span>
-                    <b> Neto: </b> <span><u class="net3"></u></span>
+                    <p>
+                        <b> Oferta: </b> <span><u class="of3"></u></span>
+                    </p>
+                    <p>
+                        <b> Neto: </b> <span><u class="net3"></u></span>
+                    </p>
                 </div>
             </div>
         </div>

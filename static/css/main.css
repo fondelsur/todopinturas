@@ -9,11 +9,6 @@
 body{
     font-size: 20px;
 }
-@media (min-width:320px) and (max-width:760px){
-  body{
-      font-size: 72px;
-  }
-}
 
 @media (min-device-width:320px) and (max-device-width:760px){
     body{
@@ -42,6 +37,7 @@ body{
     }
 
 }
+
 .presentation img{
     display: block;
     margin: 0 auto;
@@ -60,6 +56,19 @@ body{
     font-family: sans-serif;
     color: white;
     width: 80% !important;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    background-color: rgb(81, 100, 185);
+    border-radius: 4px;
+}
+
+.square{
+    display: inline-block;
+    border-radius: 3px;
 }
 
 .ui-dialog .confirm{

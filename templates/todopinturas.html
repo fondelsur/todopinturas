@@ -34,7 +34,7 @@
                 </th>
             </tr>
             {% for resultado in consulta %}
-            <tr data-code="{{ resultado.article_id }}" data-description="{{ resultado.article_description }}" data-pvp="{{ resultado.article_PVP }}€" data-discount-l2="{{ resultado.discount_l2 }}€" data-net-l2="{{ resultado.net_l2 }}€" data-discount-l4="{{ resultado.discount_l4 }}€" data-net-l4="{{ resultado.net_l4 }}€" data-offer1="{{ resultado.offer_1 }}€" data-net1="{{ resultado.net_1 }}€" data-offer2="{{ resultado.offer_2 }}€" data-net2="{{ resultado.net_2 }}€" data-offer3="{{ resultado.offer_3 }}€" data-net3="{{ resultado.net_3 }}€">
+            <tr data-code="{{ resultado.article_id }}" data-description="{{ resultado.article_description }}" data-pvp="{{ resultado.article_PVP }}€" data-discount-l2="{{ resultado.discount_l2 }}" data-net-l2="{{ resultado.net_l2 }}" data-discount-l4="{{ resultado.discount_l4 }}" data-net-l4="{{ resultado.net_l4 }}" data-offer1="{{ resultado.offer_1 }}" data-net1="{{ resultado.net_1 }}" data-offer2="{{ resultado.offer_2 }}" data-net2="{{ resultado.net_2 }}" data-offer3="{{ resultado.offer_3 }}" data-net3="{{ resultado.net_3 }}">
                 <td>
                     <a class="clickable">{{ resultado.article_id }}</a>
                 </td>
@@ -74,22 +74,39 @@
             <p>
                 <span><b class="description"></b></span>
             </p>
+            <div class="row">
+                <b> PVP:</b> <span><u class="pvp"></u></span>
 
-                <ul>
-                    <li><b> PVP:</b> <span><u class="pvp"></u></span></li>
-                    <li><b> Descuento L2:</b> <span><u class="dc2"></u></span></li>
-                    <li><b> Neto L2:</b> <span><u class="net2"></u></span></li>
-                    <li><b> Descuento L4:</b> <span><u class="dc4"></u></span></li>
-                    <li><b> Neto L4: </b><span><u class="net4"></u></span></li>
-                    <li><b> Oferta: </b> <span><u class="of1"></u></span></li>
-                    <li><b> Neto: </b> <span><u class="net1"></u></span></li>
-                    <li><b> Oferta: </b> <span><u class="of2"></u></span></li>
-                    <li><b> Neto: </b>  <span><u class="net2"></u></span></li>
-                    <li><b> Oferta: </b> <span><u class="of3"></u></span></li>
-                    <li><b> Neto: </b>  <span><u class="net3"></u></span></li>
-                </ul>
-
+            </div>
+            <div class="row">
+                <div class="square">
+                    <h5>Línea 2</h5>
+                    <b> Descuento :</b> <span><u class="dc2"></u></span>
+                    <b> Neto L2:</b> <span><u class="net2"></u></span>
+                </div>
+                <div class="square">
+                    <h5>Línea 4</h5>
+                    <b> Descuento: </b> <span><u class="dc4"></u></span>
+                    <b> Neto: </b><span><u class="net4"></u></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="square">
+                    <h5>Oferta 1</h5>
+                    <b> Oferta: </b> <span><u class="of1"></u></span>
+                    <b> Neto: </b> <span><u class="net1"></u></span>
+                </div>
+                <div class="square">
+                    <h5>Oferta 2</h5>
+                    <b> Oferta: </b> <span><u class="of2"></u></span>
+                    <b> Neto: </b> <span><u class="net2"></u></span>
+                </div>
+                <div class="square">
+                    <h5>Oferta 3</h5>
+                    <b> Oferta: </b> <span><u class="of3"></u></span>
+                    <b> Neto: </b> <span><u class="net3"></u></span>
+                </div>
+            </div>
         </div>
-
     </body>
 </html>

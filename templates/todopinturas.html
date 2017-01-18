@@ -34,7 +34,7 @@
                 </th>
             </tr>
             {% for resultado in consulta %}
-            <tr data-code="{{ resultado.article_id }}" data-description="{{ resultado.article_description }}" data-pvp="{{ resultado.article_PVP }}€" data-discount-l2="{{ resultado.discount_l2 }}" data-net-l2="{{ resultado.net_l2 }}" data-discount-l4="{{ resultado.discount_l4 }}" data-net-l4="{{ resultado.net_l4 }}" data-offer1="{{ resultado.offer_1 }}" data-net1="{{ resultado.net_1 }}" data-offer2="{{ resultado.offer_2 }}" data-net2="{{ resultado.net_2 }}" data-offer3="{{ resultado.offer_3 }}" data-net3="{{ resultado.net_3 }}">
+            <tr data-code="{{ resultado.article_id }}" data-description="{{ resultado.article_description }}" data-pvp="{{ resultado.article_PVP|floatformat:2 }}€" data-discount-l2="{{ resultado.discount_l2|floatformat:2 }}" data-net-l2="{{ resultado.net_l2|floatformat:2 }}" data-discount-l4="{{ resultado.discount_l4|floatformat:2 }}" data-net-l4="{{ resultado.net_l4|floatformat:2 }}" data-offer1="{{ resultado.offer_1 }}" data-net1="{{ resultado.net_1|floatformat:2 }}" data-offer2="{{ resultado.offer_2 }}" data-net2="{{ resultado.net_2|floatformat:2 }}" data-offer3="{{ resultado.offer_3 }}" data-net3="{{ resultado.net_3|floatformat:2 }}">
                 <td>
                     <a class="clickable">{{ resultado.article_id }}</a>
                 </td>
@@ -42,7 +42,7 @@
                     <a class="clickable">{{ resultado.article_description }}</a>
                 </td>
                 <td>
-                    <a class="clickable">{{ resultado.article_PVP }}</a>
+                    <a class="clickable">{{ resultado.article_PVP|floatformat:2 }}</a>
                 </td>
             </tr>
             {% endfor %}
@@ -82,45 +82,45 @@
                 <div class="square">
                     <h5>Línea 2</h5>
                     <p>
-                        <b> Descuento :</b> <span><u class="dc2"></u></span>
+                    <b> Descuento :</b><br> <span><u class="dc2"></u></span>
                     </p>
                     <p>
-                        <b> Neto:</b> <span><u class="net2"></u></span>
+                    <b> Neto:</b><br><span><u class="net2"></u></span>
                     </p>
                 </div>
                 <div class="square">
                     <h5>Línea 4</h5>
                     <p>
-                        <b> Descuento: </b> <span><u class="dc4"></u></span>
+                    <b> Descuento: </b><br> <span><u class="dc4"></u></span>
                     </p>
                     <p>
-                        <b> Neto: </b><span><u class="net4"></u></span>
+                    <b> Neto: </b><br><span><u class="net4"></u></span>
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="square">
                     <p>
-                        <b> Oferta: </b> <span><u class="of1"></u></span>
+                    <b> Oferta: </b><br> <span><u class="of1"></u></span>
                     </p>
                     <p>
-                        <b> Neto: </b> <span><u class="net1"></u></span>
-                    </p>
-                </div>
-                <div class="square">
-                    <p>
-                        <b> Oferta: </b> <span><u class="of2"></u></span>
-                    </p>
-                    <p>
-                        <b> Neto: </b> <span><u class="net2"></u></span>
+                    <b> Neto: </b><br> <span><u class="net1"></u></span>
                     </p>
                 </div>
                 <div class="square">
                     <p>
-                        <b> Oferta: </b> <span><u class="of3"></u></span>
+                    <b> Oferta: </b><br> <span><u class="of2"></u></span>
                     </p>
                     <p>
-                        <b> Neto: </b> <span><u class="net3"></u></span>
+                    <b> Neto: </b><br> <span><u class="net2"></u></span>
+                    </p>
+                </div>
+                <div class="square">
+                    <p>
+                    <b> Oferta: </b><br> <span><u class="of3"></u></span>
+                    </p>
+                    <p>
+                    <b> Neto: </b><br> <span><u class="net3"></u></span>
                     </p>
                 </div>
             </div>

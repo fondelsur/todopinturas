@@ -143,8 +143,8 @@ def import_sheet(request):
             excel = request.FILES['file']
             dict_values = excel.get_records()
             for value in dict_values:
-                code = str(value['codigo'])
-                description = value.get('articulo', None)
+                code = str(value['INTERNO'])
+                description = value.get('DESCRIPCION ARTICULO', None)
                 pvp = value.get('PVP', None)
                 dtol2 = value.get('Dto. L2', 0.0)
                 if dtol2 == "":
@@ -155,25 +155,25 @@ def import_sheet(request):
                 dtol4 = value.get('Dto. L4', 0.0)
                 if dtol4 == '':
                     dtol4 = 0.0
-                netl4 = value.get('Neto-1', 0.0)
+                netl4 = value.get('Neto', 0.0)
                 if netl4 == '':
                     netl4 = 0.0
                 offer1 = str(value.get('Oferta', 0))
                 if offer1 == '':
                     offer1 = '0'
-                net1 = value.get('Neto-2', 0.0)
+                net1 = value.get('30+3', 0.0)
                 if net1 == '':
                     net1 = 0.0
-                offer2 = str(value.get('Oferta-1', 0))
+                offer2 = str(value.get('Oferta', 0))
                 if offer2 == '':
                     offer2 = '0'
-                net2 = value.get('Neto-3', 0.0)
+                net2 = value.get('29+4', 0.0)
                 if net2 == '':
                     net2 = 0.0
-                offer3 = str(value.get('Oferta-2', 0))
+                offer3 = str(value.get('Oferta', 0))
                 if offer3 == '':
                     offer3 = '0'
-                net3 = value.get('Neto-4', 0.0)
+                net3 = value.get('28+5', 0.0)
                 if net3 == '':
                     net3 = 0.0
                 try:

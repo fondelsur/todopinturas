@@ -5,11 +5,7 @@ from django.http import HttpResponseBadRequest, HttpResponse
 
 from _compact import JsonResponse
 
-from decimal import Decimal
-
 from django.contrib.auth.decorators import login_required
-from django import forms
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
 from django.db import models
 
@@ -143,7 +139,7 @@ def import_sheet(request):
             excel = request.FILES['file']
             dict_values = excel.get_records()
             for value in dict_values:
-                code = str(value['INTERNO'])
+                code = value.get('INTERNO', None)
                 description = value.get('DESCRIPCION ARTICULO', None)
                 pvp = value.get('PVP', None)
                 dtol2 = value.get('Dto. L2', 0.0)
@@ -158,24 +154,16 @@ def import_sheet(request):
                 netl4 = value.get('Neto', 0.0)
                 if netl4 == '':
                     netl4 = 0.0
-                offer1 = str(value.get('Oferta', 0))
+                offer1 = str(value.get('Oferta 30+3', 0))
                 if offer1 == '':
                     offer1 = '0'
-                net1 = value.get('30+3', 0.0)
-                if net1 == '':
-                    net1 = 0.0
-                offer2 = str(value.get('Oferta', 0))
+                offer2 = value.get('Oferta 29+4', 0.0)
                 if offer2 == '':
-                    offer2 = '0'
-                net2 = value.get('29+4', 0.0)
-                if net2 == '':
-                    net2 = 0.0
-                offer3 = str(value.get('Oferta', 0))
+                    offer2 = 0.0
+                offer3 = str(value.get('Oferta 28+5', 0))
                 if offer3 == '':
                     offer3 = '0'
-                net3 = value.get('28+5', 0.0)
-                if net3 == '':
-                    net3 = 0.0
+
                 try:
                     item = Item.objects.get(article_id=code)
                     item.article_description = description
@@ -184,12 +172,9 @@ def import_sheet(request):
                     item.net_l2 = netl2
                     item.discount_l4 = dtol4
                     item.net_l4 = netl4
-                    item.offer_1 = offer1
-                    item.net_1 = net1
-                    item.offer_2 = offer2
-                    item.net_2 = net2
-                    item.offer_3 = offer3
-                    item.net_3 = net3
+                    item.offer_303 = offer1
+                    item.offer_294 = offer2
+                    item.offer_285 = offer3
                     item.save()
                 except Item.DoesNotExist:
                     item = Item.objects.create(article_id=code,
@@ -199,12 +184,9 @@ def import_sheet(request):
                                                net_l2=netl2,
                                                discount_l4=dtol4,
                                                net_l4=netl4,
-                                               offer_1=offer1,
-                                               net_1=net1,
-                                               offer_2=offer2,
-                                               net_2=net2,
-                                               offer_3=offer3,
-                                               net_3=net3
+                                               offer_303=offer1,
+                                               offer_294=offer2,
+                                               offer_285=offer3
                                                )
             return HttpResponse("Se ha subido correctamente el archivo")
         else:

@@ -20,12 +20,9 @@ $(document).ready(function(){
         $(".net2").html($(this).parent().parent().attr('data-net-l2'));
         $(".dc4").html($(this).parent().parent().attr('data-discount-l4'));
         $(".net4").html($(this).parent().parent().attr('data-net-l4'));
-        $(".of1").html($(this).parent().parent().attr('data-offer1'));
-        $(".net1").html($(this).parent().parent().attr('data-net1'));
-        $(".of2").html($(this).parent().parent().attr('data-offer2'));
-        $(".net2").html($(this).parent().parent().attr('data-net2'));
-        $(".of3").html($(this).parent().parent().attr('data-offer3'));
-        $(".net3").html($(this).parent().parent().attr('data-net3'));
+        $(".of1").html($(this).parent().parent().attr('data-of1'));
+        $(".of2").html($(this).parent().parent().attr('data-of2'));
+        $(".of3").html($(this).parent().parent().attr('data-of3'));
         $('#dialog').dialog('open');
 
     })

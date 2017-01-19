@@ -29,12 +29,9 @@ class Item(models.Model):
     net_l2 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto L2", blank=True, null=True)
     discount_l4 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Descuento L4", blank=True, null=True)
     net_l4 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto L4", blank=True, null=True)
-    offer_1 = models.CharField(max_length=50, verbose_name="Oferta A", blank=True, null=True)
-    net_1 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto A", blank=True, null=True)
-    offer_2 = models.CharField(max_length=50, verbose_name="Oferta B", blank=True, null=True)
-    net_2 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto B", blank=True, null=True)
-    offer_3 = models.CharField(max_length=50, verbose_name="Oferta C")
-    net_3 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Neto C")
+    offer_303 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Oferta 30+3", blank=True, null=True)
+    offer_294 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Oferta 29+4", blank=True, null=True)
+    offer_285 = models.DecimalField(max_digits=10, decimal_places=3, verbose_name="Oferta 28+5", blank=True, null=True)
 
     def __str__(self):
         return self.article_description

@@ -41,9 +41,9 @@
                 data-net-l2="{{ resultado.net_l2|floatformat:2 }}"
                 data-discount-l4="{{ resultado.discount_l4|floatformat:2 }}"
                 data-net-l4="{{ resultado.net_l4|floatformat:2 }}"
-                data-of1="{{ resultado.offer_303}}"
-                data-of2="{{ resultado.offer_294 }}"
-                data-of3="{{ resultado.offer_285 }}">
+                data-of1="{{ resultado.offer_303|floatformat:2}}"
+                data-of2="{{ resultado.offer_294|floatformat:2 }}"
+                data-of3="{{ resultado.offer_285|floatformat:2 }}">
                 <td>
                     <a class="clickable">{{ resultado.article_id }}</a>
                 </td>
@@ -91,7 +91,7 @@
                 <div class="square">
                     <h5>Línea 2</h5>
                     <p>
-                    <b> Descuento :</b><br> <span><u class="dc2"></u></span>
+                    <b> Descuento:</b><br> <span><u class="dc2"></u></span>
                     </p>
                     <p>
                     <b> Neto:</b><br><span><u class="net2"></u></span>

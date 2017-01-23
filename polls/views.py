@@ -151,7 +151,7 @@ def import_sheet(request):
                 dtol4 = value.get('Dto. L4', 0.0)
                 if dtol4 == '':
                     dtol4 = 0.0
-                netl4 = value.get('Neto', 0.0)
+                netl4 = value.get('Neto2', 0.0)
                 if netl4 == '':
                     netl4 = 0.0
                 offer1 = str(value.get('Oferta 30+3', 0))

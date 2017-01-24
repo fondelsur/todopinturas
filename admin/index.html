@@ -1,0 +1,10 @@
+{% extends "admin/index.html" %}
+
+{% block sidebar %}
+    {{block.super}}
+    <div>
+        <h1>Enlace:</h1>
+<input type="button" value="Subir Excel" onClick=" window.location.href='{% url 'import_sheet' %}'">
+        <!--<b><a href="{% url 'import_sheet' %}">Subir hoja de cálculo</a></b>-->
+    </div>
+{% endblock %}

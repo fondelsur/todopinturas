@@ -4,7 +4,30 @@
 </head>
 <body>
     <h1>{{header}}</h1>
-
+<br>
+<b>
+	Recuerde subir correctamente el excel y no poner espacios en los encabezados. Ejemplo:
+</b>
+<br>
+<br>
+	<table border="2px">
+	<tr>
+		<td> INTERNO </td>
+		<td> DESCRIPCION ARTICULO </td>
+		<td> PVP </td>
+		<td> Dto. L2 </td>
+		<td> Neto </td>
+		<td> Dto. L4 </td>
+		<td> Neto2 </td>
+		<td> Oferta30+3 </td>
+		<td> Oferta29+4 </td>
+		<td> Oferta28+5 </td>
+	</tr>
+</table>
+<br>
+Para mas de 9000 articulos la media de carga son 5 minutos.
+<br>
+<br>
     {% if form.errors %}
         <p style="color: red;">
             Please correct the error{{ form.errors|pluralize }} below.
@@ -16,7 +39,10 @@
             {{ form.as_table }}
         </table>
         {% csrf_token %}
-        <input type="submit" value="Submit">
+        <input type="submit" value="Enviar">
     </form>
+<br>
+<input type="button" value="Volver" onClick="history.back()">
+
 </body>
 </html>
